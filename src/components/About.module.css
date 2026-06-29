@@ -12,6 +12,7 @@
 /* Left - Image / Visual */
 .aboutLeft {
   position: relative;
+  width: 100%;
 }
 
 .aboutImageCard {
