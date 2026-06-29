@@ -158,13 +158,6 @@ export default function Navbar() {
             >
               <div className={styles.mobileNavHeader}>
                 <span className={styles.mobileNavTitle}>Navigation</span>
-                <button
-                  className={styles.mobileClose}
-                  onClick={() => setMobileOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <FiX />
-                </button>
               </div>
 
               <div className={styles.mobileNavLinks}>
