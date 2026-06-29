@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import { FiCode, FiCamera, FiSmartphone, FiCpu, FiFilm, FiPenTool } from 'react-icons/fi';
 import styles from './About.module.css';
 
@@ -79,7 +80,7 @@ export default function About() {
             <div className={styles.aboutImageCard}>
               <div className={styles.aboutImageInner}>
                 <div className={styles.aboutImageGradient} />
-                <span className={styles.aboutEmoji}>DM</span>
+                <Image src="/avatar.png" alt="Dharma Mudita" fill style={{ objectFit: 'cover' }} />
               </div>
               <div className={styles.cardGlow} />
             </div>

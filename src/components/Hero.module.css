@@ -533,6 +533,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .heroPrimary,
+  .heroSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
     padding: 100px 16px 60px;
@@ -550,17 +563,6 @@
 
   .heroImage {
     font-size: 3rem;
-  }
-
-  .heroButtons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .heroPrimary,
-  .heroSecondary {
-    width: 100%;
-    justify-content: center;
   }
 
   .typingWrapper {

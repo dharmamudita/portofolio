@@ -67,6 +67,7 @@
   border: 1px solid rgba(74, 139, 255, 0.2);
   border-radius: var(--border-radius-lg);
   padding: 40px;
+  width: 100%;
   max-width: 450px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(74, 139, 255, 0.15);

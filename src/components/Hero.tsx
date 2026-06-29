@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 import { FiGithub, FiLinkedin, FiInstagram, FiArrowRight, FiDownload } from 'react-icons/fi';
 import { SiNextdotjs, SiPython, SiReact, SiFlutter, SiTensorflow, SiTypescript } from 'react-icons/si';
 import styles from './Hero.module.css';
@@ -196,7 +197,7 @@ export default function Hero() {
             {/* Center avatar */}
             <div className={styles.heroImageWrapper}>
               <div className={styles.heroImage}>
-                <span className={styles.heroImageText}>DM</span>
+                <Image src="/avatar.png" alt="Dharma Mudita Avatar" fill style={{ objectFit: 'cover' }} priority />
               </div>
             </div>
 
