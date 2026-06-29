@@ -1,0 +1,51 @@
+.divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  overflow: visible;
+}
+
+.dividerLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 60%;
+  max-width: 600px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(74, 139, 255, 0.3),
+    rgba(0, 229, 255, 0.4),
+    rgba(74, 139, 255, 0.3),
+    transparent
+  );
+}
+
+.dividerGlow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  width: 40%;
+  max-width: 400px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(74, 139, 255, 0.5),
+    transparent
+  );
+  filter: blur(8px);
+}
+
+.dividerDot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  box-shadow: 0 0 12px rgba(74, 139, 255, 0.6), 0 0 30px rgba(74, 139, 255, 0.2);
+}

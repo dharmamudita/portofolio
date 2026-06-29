@@ -1,0 +1,232 @@
+.projects {
+  position: relative;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.projectCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.projectCard:hover {
+  border-color: rgba(74, 139, 255, 0.3);
+}
+
+.cardBorderGlow {
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--border-radius-xl);
+  background: var(--gradient-primary);
+  opacity: 0;
+  z-index: -1;
+  filter: blur(12px);
+  transition: var(--transition-normal);
+}
+
+.projectCard:hover .cardBorderGlow {
+  opacity: 0.15;
+}
+
+.projectImageWrapper {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition-slow);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1) translateZ(20px);
+}
+
+.projectGlare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(74, 139, 255, 0.12) 0%,
+    transparent 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: var(--transition-normal);
+  z-index: 2;
+}
+
+.projectCard:hover .projectGlare {
+  opacity: 1;
+}
+
+.projectOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(3, 7, 18, 0.95) 0%,
+    rgba(3, 7, 18, 0.4) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 28px;
+  gap: 12px;
+  z-index: 3;
+}
+
+.projectCard:hover .projectOverlay {
+  opacity: 1;
+}
+
+.overlayButton {
+  padding: 12px 24px;
+  border-radius: var(--border-radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-normal);
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.projectCard:hover .overlayButton {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.projectCard:hover .overlayButton:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.overlayButtonPrimary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(74, 139, 255, 0.4);
+}
+
+.overlayButtonPrimary:hover {
+  box-shadow: 0 6px 25px rgba(74, 139, 255, 0.6);
+  transform: translateY(-2px) !important;
+}
+
+.overlayButtonSecondary {
+  background: rgba(74, 139, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(74, 139, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.overlayButtonSecondary:hover {
+  background: rgba(74, 139, 255, 0.2);
+  transform: translateY(-2px) !important;
+}
+
+.projectContent {
+  padding: 28px;
+}
+
+.projectCategory {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-purple-light);
+  margin-bottom: 10px;
+}
+
+.projectTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  margin-bottom: 10px;
+  transition: var(--transition-normal);
+}
+
+.projectCard:hover .projectTitle {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.projectDescription {
+  font-size: 0.88rem;
+  color: var(--text-tertiary);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projectTag {
+  padding: 5px 14px;
+  background: rgba(74, 139, 255, 0.06);
+  border: 1px solid rgba(74, 139, 255, 0.12);
+  border-radius: var(--border-radius-full);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-normal);
+}
+
+.projectTag:hover {
+  background: rgba(74, 139, 255, 0.12);
+  border-color: rgba(74, 139, 255, 0.3);
+  color: var(--accent-purple-light);
+}
+
+/* Featured project */
+.projectFeatured {
+  grid-column: span 2;
+}
+
+.projectFeatured .projectImageWrapper {
+  aspect-ratio: 21/9;
+}
+
+@media (max-width: 1024px) {
+  .projectFeatured {
+    grid-column: span 1;
+  }
+
+  .projectFeatured .projectImageWrapper {
+    aspect-ratio: 16/10;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

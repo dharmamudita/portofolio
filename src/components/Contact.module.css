@@ -1,0 +1,235 @@
+.contact {
+  position: relative;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left */
+.contactLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contactTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.contactDescription {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.contactInfoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactInfoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contactInfoIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--accent-purple-light);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: var(--transition-normal);
+}
+
+.contactInfoItem:hover .contactInfoIcon {
+  background: rgba(74, 139, 255, 0.15);
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.contactInfoLabel {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contactInfoValue {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.contactSocials {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contactSocialLink {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: var(--transition-normal);
+}
+
+.contactSocialLink:hover {
+  color: white;
+  transform: translateY(-4px);
+}
+
+.socialGithub:hover {
+  background: rgba(74, 139, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(74, 139, 255, 0.12);
+}
+
+.socialLinkedin:hover {
+  background: rgba(10, 102, 194, 0.2);
+  border-color: #0A66C2;
+  box-shadow: 0 0 20px rgba(10, 102, 194, 0.3);
+}
+
+.socialInstagram:hover {
+  background: rgba(225, 48, 108, 0.2);
+  border-color: #E1306C;
+  box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
+}
+
+.socialEmail:hover {
+  background: rgba(234, 67, 53, 0.2);
+  border-color: #EA4335;
+  box-shadow: 0 0 20px rgba(234, 67, 53, 0.3);
+}
+
+/* Right - Form */
+.contactForm {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(35, 65, 120, 0.06);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-normal);
+  outline: none;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(74, 139, 255, 0.1);
+  background: rgba(35, 65, 120, 0.1);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.formSubmit {
+  padding: 16px 36px;
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--border-radius-full);
+  box-shadow: 0 4px 25px rgba(74, 139, 255, 0.4);
+  transition: var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.formSubmit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.formSubmit:hover {
+  box-shadow: 0 6px 35px rgba(74, 139, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactForm {
+    padding: 24px;
+  }
+}

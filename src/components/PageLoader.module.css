@@ -1,0 +1,111 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #030712;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.loaderLogo {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loaderBar {
+  width: 200px;
+  height: 3px;
+  background: rgba(35, 65, 120, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loaderFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(74, 139, 255, 0.5);
+}
+
+.loaderText {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.popupContent {
+  background: var(--glass-bg);
+  border: 1px solid rgba(255, 171, 0, 0.3);
+  border-radius: var(--border-radius-lg);
+  padding: 40px;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(255, 171, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.popupContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFAB00, #FFD600);
+}
+
+.popupIcon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  animation: pulse-warn 2s infinite;
+}
+
+.popupTitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD600;
+  margin-bottom: 12px;
+}
+
+.popupText {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@keyframes pulse-warn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+

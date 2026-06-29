@@ -1,0 +1,39 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(74, 139, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+  mix-blend-mode: difference;
+}
+
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-purple);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10001;
+}
+
+.cursorHover {
+  width: 56px;
+  height: 56px;
+  border-color: rgba(0, 229, 255, 0.5);
+  background: rgba(74, 139, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+  .cursor,
+  .cursorDot {
+    display: none;
+  }
+}
