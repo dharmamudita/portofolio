@@ -139,3 +139,10 @@
   color: var(--text-primary);
   transform: rotate(90deg);
 }
+
+@media (max-width: 480px) {
+  .popupContent {
+    padding: 24px 20px;
+  }
+}
+

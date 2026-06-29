@@ -260,4 +260,13 @@
   .aboutImageDecor {
     display: none;
   }
+  
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .statCard {
+    padding: 20px 16px;
+  }
 }
