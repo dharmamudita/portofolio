@@ -80,7 +80,7 @@ export default function About() {
             <div className={styles.aboutImageCard}>
               <div className={styles.aboutImageInner}>
                 <div className={styles.aboutImageGradient} />
-                <Image src="/avatar.png" alt="Dharma Mudita" fill style={{ objectFit: 'cover' }} />
+                <Image src="/avatar.jpg" alt="Dharma Mudita" fill style={{ objectFit: 'cover' }} />
               </div>
               <div className={styles.cardGlow} />
             </div>

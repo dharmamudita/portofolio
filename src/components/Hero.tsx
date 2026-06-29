@@ -197,7 +197,7 @@ export default function Hero() {
             {/* Center avatar */}
             <div className={styles.heroImageWrapper}>
               <div className={styles.heroImage}>
-                <Image src="/avatar.png" alt="Dharma Mudita Avatar" fill style={{ objectFit: 'cover' }} priority />
+                <Image src="/avatar.jpg" alt="Dharma Mudita Avatar" fill style={{ objectFit: 'cover' }} priority />
               </div>
             </div>
 
