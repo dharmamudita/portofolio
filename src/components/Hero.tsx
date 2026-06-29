@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiInstagram, FiArrowRight, FiDownload } from 'react-icons/fi';
 import { SiNextdotjs, SiPython, SiReact, SiFlutter, SiTensorflow, SiTypescript } from 'react-icons/si';
 import styles from './Hero.module.css';
@@ -53,7 +53,7 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayedText, isDeleting, currentRole]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -61,7 +61,7 @@ export default function Hero() {
     },
   };
 
-  const childVariants = {
+  const childVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } },
   };
