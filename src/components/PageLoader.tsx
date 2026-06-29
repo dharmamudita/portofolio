@@ -25,10 +25,6 @@ export default function PageLoader() {
           // Show popup after loader exits
           setTimeout(() => {
             setShowPopup(true);
-            // Hide popup after 2 seconds
-            setTimeout(() => {
-              setShowPopup(false);
-            }, 2000);
           }, 600);
         }, 400);
       }
@@ -88,10 +84,24 @@ export default function PageLoader() {
               exit={{ scale: 0.8, opacity: 0, y: 20 }}
               transition={{ type: 'spring', damping: 20, stiffness: 300 }}
             >
-              <div className={styles.popupIcon}>🚧</div>
+              <button 
+                className={styles.closePopup} 
+                onClick={() => setShowPopup(false)}
+                aria-label="Close popup"
+              >
+                <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+              <div className={styles.popupIcon}>
+                <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" color="#00E5FF">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
               <h3 className={styles.popupTitle}>Pemberitahuan</h3>
               <p className={styles.popupText}>Mohon maaf, web ini sedang dalam pengembangan.</p>
             </motion.div>
+
           </motion.div>
         )}
       </AnimatePresence>

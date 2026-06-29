@@ -52,8 +52,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(3, 7, 18, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(3, 7, 18, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 10000;
   display: flex;
   align-items: center;
@@ -62,15 +63,17 @@
 }
 
 .popupContent {
-  background: var(--glass-bg);
-  border: 1px solid rgba(255, 171, 0, 0.3);
+  background: rgba(10, 15, 30, 0.6);
+  border: 1px solid rgba(74, 139, 255, 0.2);
   border-radius: var(--border-radius-lg);
   padding: 40px;
   max-width: 450px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(255, 171, 0, 0.15);
+  box-shadow: 0 10px 40px rgba(74, 139, 255, 0.15);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .popupContent::before {
@@ -80,7 +83,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FFAB00, #FFD600);
+  background: linear-gradient(90deg, #4A8BFF, #00E5FF);
 }
 
 .popupIcon {
@@ -93,7 +96,10 @@
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
-  color: #FFD600;
+  background: linear-gradient(135deg, #4A8BFF, #00E5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 12px;
 }
 
@@ -104,8 +110,32 @@
 }
 
 @keyframes pulse-warn {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(74, 139, 255, 0.5)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(74, 139, 255, 0.5)); }
 }
 
+.closePopup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.closePopup:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: rotate(90deg);
+}
